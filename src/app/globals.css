@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
+/*
+ * Visual language: a printed test sheet. Warm paper, near-black ink, one ink-blue
+ * accent reserved for "where you are now" (active position, primary action).
+ * Red marks incorrect answers in results only. Contrast pairs verified with the
+ * antislop contrast checker in both themes.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f4f2ec;
+  --sheet: #fcfbf8;
+  --ink: #1c1b18;
+  --ink-muted: #57544c;
+  --rule: #dad6cb;
+  --rule-strong: #8c877a;
+  --accent: #1e4bb0;
+  --accent-soft: #e3e9f7;
+  --accent-ink: #ffffff;
+  --wrong: #b42318;
+  --chart-correct: #1e4bb0;
+  --chart-wrong: #b42318;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #151513;
+  --sheet: #1d1c19;
+  --ink: #ece9e1;
+  --ink-muted: #a9a59a;
+  --rule: #34322d;
+  --rule-strong: #7a766b;
+  --accent: #8faeff;
+  --accent-soft: #23304f;
+  --accent-ink: #0e1630;
+  --wrong: #ff8f84;
+  /* Chart marks sit in a darker band than text on dark surfaces (dataviz validator). */
+  --chart-correct: #6e8feb;
+  --chart-wrong: #db5f54;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-paper: var(--paper);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-wrong: var(--wrong);
+  --color-chart-correct: var(--chart-correct);
+  --color-chart-wrong: var(--chart-wrong);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    --paper: #ffffff;
+    --sheet: #ffffff;
+    --ink: #000000;
+    --ink-muted: #3d3d3d;
+    --rule: #bbbbbb;
+    --rule-strong: #777777;
+    --accent: #1e4bb0;
+    --wrong: #b42318;
+    --chart-correct: #1e4bb0;
+    --chart-wrong: #b42318;
+    color-scheme: light;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
 }
