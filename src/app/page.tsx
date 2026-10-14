@@ -58,14 +58,14 @@ export default function Home() {
           <h1 className="font-serif text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
             Latihan Tes Pauli dan Tes Kraepelin
           </h1>
-          <p className="mt-5 text-lg text-ink-muted">
+          {/* <p className="mt-5 text-lg text-ink-muted">
             Dua tes hitung berwaktu yang biasa muncul dalam psikotes seleksi kerja. Aturannya sama:
             jumlahkan dua angka yang berdekatan dan tulis angka terakhirnya saja. 7 + 8 = 15, jadi
             yang ditulis 5.
           </p>
           <p className="mt-3 text-lg text-ink-muted">
             Bisa langsung dimulai tanpa akun. Jawaban dan hasil hanya tersimpan di tab browser ini.
-          </p>
+          </p> */}
         </section>
 
         <div className="grid border-t border-rule md:grid-cols-2">
@@ -113,7 +113,7 @@ export default function Home() {
           })}
         </div>
 
-        <section aria-labelledby="notes-title" className="border-t border-rule py-12 sm:py-16">
+        {/* <section aria-labelledby="notes-title" className="border-t border-rule py-12 sm:py-16">
           <h2 id="notes-title" className="font-serif text-2xl font-semibold">
             Sebelum mulai
           </h2>
@@ -131,11 +131,11 @@ export default function Home() {
               Menutup tab menghapus sesi dan hasilnya.
             </li>
           </ul>
-        </section>
+        </section> */}
       </main>
       <footer className="border-t border-rule print:hidden">
         <p className="mx-auto max-w-5xl px-4 py-6 text-sm text-ink-muted sm:px-6">
-          Latihan mandiri. Tidak ada jawaban atau hasil yang dikirim ke server.
+          Tidak ada jawaban atau hasil yang dikirim ke server.
         </p>
       </footer>
     </>
