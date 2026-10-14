@@ -136,7 +136,7 @@ export default function Home() {
       <footer className="border-t border-rule print:hidden">
         <div className="mx-auto flex max-w-5xl flex-wrap justify-between gap-x-6 gap-y-1 px-4 py-6 text-sm text-ink-muted sm:px-6">
           <p>Tidak ada jawaban atau hasil yang dikirim ke server.</p>
-          <p>by Aldi Putra 2026</p>
+          <p>Aldi Putra 2026</p>
         </div>
       </footer>
     </>
